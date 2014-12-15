@@ -15,6 +15,13 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:actionBarStyle">@style/MyActionBarTheme</item>
+    </style>
+    
+    <!-- ActionBar 样式 -->
+    <style name="MyActionBarTheme"
+           parent="@android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#F3832C</item>
     </style>
 
 </resources>

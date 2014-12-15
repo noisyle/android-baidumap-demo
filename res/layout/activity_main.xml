@@ -19,6 +19,8 @@
         android:layout_alignBaseline="@+id/btnLocate"
         android:layout_alignBottom="@+id/btnLocate"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_toLeftOf="@+id/btnLocate" />
 
     <com.baidu.mapapi.map.MapView

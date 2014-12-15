@@ -10,6 +10,8 @@
 		<!-- 百度地图api key -->
 		<meta-data android:name="com.baidu.lbsapi.API_KEY"
 			android:value="vITFB58VU3aSGMsgxmdftD95" />
+<!-- 		<meta-data android:name="com.baidu.lbsapi.API_KEY" -->
+<!-- 			android:value="ZG1XClY3TGGR7mR3VGHGSCGv" /> -->
 			
 		<activity android:name=".MainActivity" android:label="@string/app_name">
 			<intent-filter>
