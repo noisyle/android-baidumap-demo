@@ -8,24 +8,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
-
+public class TestActivity extends Activity {
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.activity_test);
 
 	}
 	
-	//点击登陆按钮时调用
-	public void onClickBtnLogin(View v) {
-		Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
-		this.finish();
-	}
-	
-	//点击取消按钮时调用
-	public void onClickBtnCancelLogin(View v) {
-		this.finish();
+	//点击测试按钮时调用
+	public void onClickBtnTest(View v) {
+		Toast.makeText(this, "测试", Toast.LENGTH_SHORT).show();
 	}
 	
 	@Override
@@ -41,16 +35,16 @@ public class LoginActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
-		case R.id.action_test:
-			openTest();
+		case R.id.action_login:
+			openLogin();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
 	
-	private void openTest() {
-		Intent intent = new Intent(this, TestActivity.class);
+	private void openLogin() {
+		Intent intent = new Intent(this, LoginActivity.class);
 		startActivity(intent);
 	}
 }

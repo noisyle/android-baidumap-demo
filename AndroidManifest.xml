@@ -9,10 +9,10 @@
 		android:allowBackup="true" android:icon="@drawable/ic_launcher"
 		android:label="@string/app_name" android:theme="@style/AppTheme">
 		<!-- 百度地图api key -->
-		<meta-data android:name="com.baidu.lbsapi.API_KEY"
-			android:value="vITFB58VU3aSGMsgxmdftD95" />
 <!-- 		<meta-data android:name="com.baidu.lbsapi.API_KEY" -->
-<!-- 			android:value="ZG1XClY3TGGR7mR3VGHGSCGv" /> -->
+<!-- 			android:value="vITFB58VU3aSGMsgxmdftD95" /> -->
+		<meta-data android:name="com.baidu.lbsapi.API_KEY"
+			android:value="ZG1XClY3TGGR7mR3VGHGSCGv" />
 		
 		<activity android:name="com.noisyle.appdemo.MainActivity" android:label="@string/app_name">
 			<intent-filter>
@@ -20,8 +20,10 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		
-		<activity android:name="com.noisyle.appdemo.LoginActivity" android:label="@string/app_name"
+		<activity android:name="com.noisyle.appdemo.LoginActivity" android:label="@string/action_login"
+			android:parentActivityName="com.noisyle.appdemo.MainActivity" >
+		</activity>
+		<activity android:name="com.noisyle.appdemo.TestActivity" android:label="@string/action_test"
 			android:parentActivityName="com.noisyle.appdemo.MainActivity" >
 		</activity>
 		

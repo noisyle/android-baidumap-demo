@@ -32,7 +32,6 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		SDKInitializer.initialize(getApplicationContext());//初始化baidu map sdk
 		setContentView(R.layout.activity_main);
 
 		// 地图初始化
@@ -125,10 +124,11 @@ public class MainActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
-		case R.id.action_settings:
-			return true;
 		case R.id.action_login:
 			openLogin();
+			return true;
+		case R.id.action_test:
+			openTest();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -137,6 +137,11 @@ public class MainActivity extends Activity {
 	
 	private void openLogin() {
 		Intent intent = new Intent(this, LoginActivity.class);
+		startActivity(intent);
+	}
+	
+	private void openTest() {
+		Intent intent = new Intent(this, TestActivity.class);
 		startActivity(intent);
 	}
 }
