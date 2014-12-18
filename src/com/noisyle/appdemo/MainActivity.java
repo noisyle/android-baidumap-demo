@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
 		option.setCoorType("bd09ll"); // 设置坐标类型
 //		option.setScanSpan(1000); // 定位时间间隔
 		option.setIsNeedAddress(true);//返回的定位结果包含地址信息
+		option.setNeedDeviceDirect(true);
 		mLocClient.setLocOption(option);
 		mLocClient.start();
 	}
@@ -71,7 +72,7 @@ public class MainActivity extends Activity {
 			
 			MyLocationData locData = new MyLocationData.Builder().accuracy(location.getRadius())
 			// 此处设置开发者获取到的方向信息，顺时针0-360
-					.direction(100).latitude(location.getLatitude()).longitude(location.getLongitude()).build();
+					.direction(location.getDirection()).latitude(location.getLatitude()).longitude(location.getLongitude()).build();
 			mBaiduMap.setMyLocationData(locData);
 			LatLng ll = new LatLng(location.getLatitude(), location.getLongitude());
 			MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
