@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,15 +34,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		SDKInitializer.initialize(getApplicationContext());//初始化baidu map sdk
 		setContentView(R.layout.activity_main);
-		
-		Button btnLocate = (Button) findViewById(R.id.btnLocate);
-		btnLocate.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, "开始定位", Toast.LENGTH_SHORT).show();
-				mLocClient.requestLocation();
-			}
-		});
 
 		// 地图初始化
 		mMapView = (MapView) findViewById(R.id.bmapView);
@@ -90,6 +80,12 @@ public class MainActivity extends Activity {
 
 		public void onReceivePoi(BDLocation poiLocation) {
 		}
+	}
+	
+	//点击定位按钮时调用
+	public void onClickBtnLocate(View v) {
+		Toast.makeText(MainActivity.this, "开始定位", Toast.LENGTH_SHORT).show();
+		mLocClient.requestLocation();
 	}
 
 	@Override
