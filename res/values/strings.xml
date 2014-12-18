@@ -3,6 +3,11 @@
 
     <string name="app_name">我才不要打车</string>
     <string name="action_settings">设置</string>
+    <string name="action_login">登陆</string>
     <string name="btnLocate">定位</string>
+    <string name="btnLogin">登陆</string>
+    <string name="btnCancel">取消</string>
+    <string name="txtUsername">用户名</string>
+    <string name="txtPassword">密码</string>
 
 </resources>

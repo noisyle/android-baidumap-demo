@@ -1,6 +1,7 @@
 package com.noisyle.appdemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +13,6 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		SDKInitializer.initialize(getApplicationContext());//初始化baidu map sdk
+//		SDKInitializer.initialize(getApplicationContext());//初始化baidu map sdk
 		setContentView(R.layout.activity_main);
 
 		// 地图初始化
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
 	
 	//点击定位按钮时调用
 	public void onClickBtnLocate(View v) {
-		Toast.makeText(MainActivity.this, "开始定位", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "开始定位", Toast.LENGTH_SHORT).show();
 		mLocClient.requestLocation();
 	}
 
@@ -123,10 +123,19 @@ public class MainActivity extends Activity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		switch (item.getItemId()) {
+		case R.id.action_settings:
 			return true;
+		case R.id.action_login:
+			openLogin();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
 		}
-		return super.onOptionsItemSelected(item);
+	}
+	
+	private void openLogin() {
+		Intent intent = new Intent(this, LoginActivity.class);
+		startActivity(intent);
 	}
 }
