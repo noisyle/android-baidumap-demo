@@ -1,14 +1,13 @@
 package com.noisyle.appdemo;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+import com.noisyle.appdemo.core.CoreActivity;
+
+public class LoginActivity extends CoreActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +18,7 @@ public class LoginActivity extends Activity {
 	
 	//点击登陆按钮时调用
 	public void onClickBtnLogin(View v) {
-		Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
+		showToast("登陆成功");
 		this.finish();
 	}
 	
@@ -31,7 +30,7 @@ public class LoginActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+//		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
@@ -41,16 +40,8 @@ public class LoginActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
-		case R.id.action_test:
-			openTest();
-			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-	}
-	
-	private void openTest() {
-		Intent intent = new Intent(this, TestActivity.class);
-		startActivity(intent);
 	}
 }

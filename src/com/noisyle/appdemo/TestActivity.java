@@ -1,14 +1,14 @@
 package com.noisyle.appdemo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-public class TestActivity extends Activity {
+import com.noisyle.appdemo.core.CoreActivity;
+
+public class TestActivity extends CoreActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class TestActivity extends Activity {
 	
 	//点击测试按钮时调用
 	public void onClickBtnTest(View v) {
-		Toast.makeText(this, "测试", Toast.LENGTH_SHORT).show();
+		showToast("测试");
 	}
 	
 	@Override

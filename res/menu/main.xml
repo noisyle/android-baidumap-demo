@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.noisyle.appdemo.MainActivity" >
+    tools:context="com.noisyle.appdemo.customer.MainActivity" >
 
     <item android:id="@+id/menu_nav"
         android:title="..."

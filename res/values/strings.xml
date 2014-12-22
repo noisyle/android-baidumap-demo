@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">我才不要打车</string>
+    <string name="app_name">人家才不要打车哼</string>
     <string name="action_login">登陆</string>
     <string name="btnLocate">定位</string>
     <string name="btnLogin">登陆</string>
@@ -10,6 +10,8 @@
     <string name="txtPassword">密码</string>
     
     
+    <string name="txtCustomer">我要求助</string>
+    <string name="txtPolice">我是警官</string>
     <string name="action_test">测试</string>
     <string name="btnTest">测试</string>
 

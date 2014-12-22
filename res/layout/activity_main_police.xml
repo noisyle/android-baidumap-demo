@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.noisyle.appdemo.MainActivity" >
+    tools:context="com.noisyle.appdemo.police.MainActivity" >
 
     <com.baidu.mapapi.map.MapView
         android:id="@+id/bmapView"

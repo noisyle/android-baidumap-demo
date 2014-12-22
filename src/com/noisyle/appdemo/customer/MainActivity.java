@@ -1,13 +1,11 @@
-package com.noisyle.appdemo;
+package com.noisyle.appdemo.customer;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -21,8 +19,12 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.noisyle.appdemo.LoginActivity;
+import com.noisyle.appdemo.R;
+import com.noisyle.appdemo.TestActivity;
+import com.noisyle.appdemo.core.CoreActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends CoreActivity {
 	MapView mMapView;
 	BaiduMap mBaiduMap;
 	// 定位相关
@@ -32,7 +34,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main_customer);
 
 		// 地图初始化
 		mMapView = (MapView) findViewById(R.id.bmapView);
@@ -65,7 +67,7 @@ public class MainActivity extends Activity {
 			if (location == null || mMapView == null)
 				return;
 			
-			Toast.makeText(MainActivity.this, "定位成功", Toast.LENGTH_SHORT).show();
+			showToast("定位成功");
 			TextView txtLocation = (TextView) findViewById(R.id.txtLocation);
 			txtLocation.setText(location.getAddrStr());
 			
@@ -84,7 +86,7 @@ public class MainActivity extends Activity {
 	
 	//点击定位按钮时调用
 	public void onClickBtnLocate(View v) {
-		Toast.makeText(this, "开始定位", Toast.LENGTH_SHORT).show();
+		showToast("开始定位");
 		mLocClient.requestLocation();
 	}
 
